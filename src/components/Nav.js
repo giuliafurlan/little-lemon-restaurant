@@ -1,25 +1,26 @@
-const Nav = () => {
+import theme from '../ui/theme';
+import { LeadText } from '../ui/typography';
+
+const menuItems = [
+  { label: 'Home', href: '#' },
+  { label: 'About', href: '#' },
+  { label: 'Menu', href: '#' },
+  { label: 'Reservation', href: '#' },
+  { label: 'Order Online', href: '#' },
+  { label: 'Login', href: '#' },
+];
+
+const Nav = ({ color = theme.colors.highlight.dark }) => {
   return (
     <nav>
       <ul>
-        <li>
-          <a href='#'>Home</a>
-        </li>
-        <li>
-          <a href='#'>About</a>
-        </li>
-        <li>
-          <a href='#'>Menu</a>
-        </li>
-        <li>
-          <a href='#'>Reservation</a>
-        </li>
-        <li>
-          <a href='#'>Order Online</a>
-        </li>
-        <li>
-          <a href='#'>Login</a>
-        </li>
+        {menuItems.map(({ label, href }) => (
+          <li>
+            <a href={href}>
+              <LeadText color={color}>{label}</LeadText>
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );

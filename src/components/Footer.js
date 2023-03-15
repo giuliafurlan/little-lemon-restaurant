@@ -1,40 +1,44 @@
-const Footer = () => {
-  return (
-    <footer>
-      <img src='missing' alt='Footer Image'></img>
-      <nav>
-        <ul>
-          <li>
-            <a href='#'>Home</a>
-          </li>
-          <li>
-            <a href='#'>About</a>
-          </li>
-          <li>
-            <a href='#'>Menu</a>
-          </li>
-          <li>
-            <a href='#'>Reservation</a>
-          </li>
-          <li>
-            <a href='#'>Order Online</a>
-          </li>
-          <li>
-            <a href='#'>Login</a>
-          </li>
-        </ul>
-      </nav>
+import logo from '../assets/footer-logo.png';
+import theme from '../ui/theme';
+import { CardTitle, Paragraph } from '../ui/typography';
+import Nav from './Nav';
 
-      <address>
-        <p>address</p>
-        <p>phone number</p>
-        <p>email</p>
-      </address>
+const Footer = () => {
+  const style = {
+    backgroudColor: theme.colors.primary.green,
+  };
+
+  return (
+    <footer style={{ backgroundColor: theme.colors.primary.green }}>
+      <img src={logo} alt='Footer Image'></img>
+      <div>
+        <CardTitle color={theme.colors.primary.yellow}>
+          Doormat Navigation
+        </CardTitle>
+        <Nav color={theme.colors.secondary.peach} />
+      </div>
+      <div>
+        <CardTitle color={theme.colors.primary.yellow}>Contacts</CardTitle>
+        <address>
+          <Paragraph color={theme.colors.secondary.peach}>
+            111 S Michigan Ave, Chicago, IL 60603, USA
+          </Paragraph>
+          <Paragraph color={theme.colors.secondary.peach}>
+            (321) 12345678987
+          </Paragraph>
+          <Paragraph color={theme.colors.secondary.peach}>
+            info@littlelemon.com
+          </Paragraph>
+        </address>
+      </div>
 
       <div>
-        <a href='#'>Facebook</a>
-        <a href='#'>Twitter</a>
-        <a href='#'>Instagram</a>
+        <CardTitle color={theme.colors.primary.yellow}>
+          Social Media Links
+        </CardTitle>
+        <Paragraph color={theme.colors.secondary.peach}>Facebook</Paragraph>
+        <Paragraph color={theme.colors.secondary.peach}>Twitter</Paragraph>
+        <Paragraph color={theme.colors.secondary.peach}>Instagram</Paragraph>
       </div>
     </footer>
   );
