@@ -1,9 +1,15 @@
+import About from './About';
+import HeroSection from './HeroSection';
+import Highlights from './Highlights';
+import Testimonials from './Testimonials';
+
 const Main = () => {
   return (
     <main>
-      <section></section>
-      <section></section>
-      <section></section>
+      <HeroSection />
+      <Highlights />
+      <Testimonials />
+      <About />
     </main>
   );
 };

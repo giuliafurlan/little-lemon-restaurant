@@ -8,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 280px;
+  padding: 24px 20%;
 }
 
 header img {
@@ -29,15 +29,19 @@ nav li {
   list-style: none;
 }
 
-nav a {
+a {
   text-decoration: none;
   cursor: pointer;
+}
+
+section {
+  padding: 0 20%;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 24px 280px;
+  padding: 24px 20%;
 }
 
 footer img {

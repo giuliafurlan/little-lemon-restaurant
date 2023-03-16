@@ -3,6 +3,7 @@ const theme = {
     primary: {
       yellow: '#F4CE14',
       green: '#495E57',
+      white: '#FFFFFF',
     },
     secondary: {
       peach: '#FBDABB',
