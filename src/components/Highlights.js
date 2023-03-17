@@ -42,7 +42,7 @@ const Highlights = () => {
       </RowSpaceBetween>
       <RowSpaceBetween style={{ marginTop: 24, alignItems: 'stretch' }}>
         {highlights.map((el) => (
-          <HighlightCard {...el} />
+          <HighlightCard key={el.title} {...el} />
         ))}
       </RowSpaceBetween>
     </section>

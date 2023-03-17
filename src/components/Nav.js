@@ -15,7 +15,7 @@ const Nav = ({ color = theme.colors.highlight.dark }) => {
     <nav>
       <ul>
         {menuItems.map(({ label, href }) => (
-          <li>
+          <li key={label}>
             <a href={href}>
               <LeadText color={color}>{label}</LeadText>
             </a>

@@ -4,13 +4,9 @@ import { CardTitle, Paragraph } from '../ui/typography';
 import Nav from './Nav';
 
 const Footer = () => {
-  const style = {
-    backgroudColor: theme.colors.primary.green,
-  };
-
   return (
     <footer style={{ backgroundColor: theme.colors.primary.green }}>
-      <img src={logo} alt='Footer Image'></img>
+      <img src={logo} alt='Footer logo'></img>
       <div>
         <CardTitle color={theme.colors.primary.yellow}>
           Doormat Navigation
