@@ -41,7 +41,7 @@ section {
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 24px 20%;
+  padding: 60px 20%;
 }
 
 footer img {
