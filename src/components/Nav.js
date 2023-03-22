@@ -1,24 +1,25 @@
+import { Link } from 'react-router-dom';
 import theme from '../ui/theme';
 import { LeadText } from '../ui/typography';
 
 const menuItems = [
-  { label: 'Home', href: '#' },
-  { label: 'About', href: '#' },
-  { label: 'Menu', href: '#' },
-  { label: 'Reservation', href: '#' },
-  { label: 'Order Online', href: '#' },
-  { label: 'Login', href: '#' },
+  { label: 'Home', url: '/' },
+  { label: 'About', url: 'in-progress' },
+  { label: 'Menu', url: 'in-progress' },
+  { label: 'Reservation', url: 'booking' },
+  { label: 'Order Online', url: 'in-progress' },
+  { label: 'Login', url: 'in-progress' },
 ];
 
 const Nav = ({ color = theme.colors.highlight.dark }) => {
   return (
     <nav>
       <ul>
-        {menuItems.map(({ label, href }) => (
+        {menuItems.map(({ label, url }) => (
           <li key={label}>
-            <a href={href}>
+            <Link to={url}>
               <LeadText color={color}>{label}</LeadText>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

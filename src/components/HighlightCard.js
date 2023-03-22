@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import deliveryIcon from '../assets/icon/delivery.svg';
 import { RowSpaceBetween } from '../ui/layout';
@@ -42,9 +43,9 @@ const HighlightCard = ({ imageSrc, title, price, description }) => {
           {description}
         </Paragraph>
         <div style={{ marginTop: 16, display: 'flex' }}>
-          <a href='#'>
+          <Link to={'in-progress'}>
             <LeadText>Order a delivery</LeadText>
-          </a>
+          </Link>
           <img
             src={deliveryIcon}
             alt='delivery icon'
