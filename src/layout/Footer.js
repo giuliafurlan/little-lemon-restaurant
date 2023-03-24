@@ -1,7 +1,7 @@
 import logo from '../assets/footer-logo.png';
+import Nav from '../components/Nav';
 import theme from '../ui/theme';
 import { CardTitle, Paragraph } from '../ui/typography';
-import Nav from './Nav';
 
 const Footer = () => {
   return (

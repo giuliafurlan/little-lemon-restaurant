@@ -3,7 +3,7 @@ import HeroSection from '../components/HeroSection';
 import Highlights from '../components/Highlights';
 import Testimonials from '../components/Testimonials';
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <HeroSection />
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

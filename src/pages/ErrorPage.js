@@ -9,7 +9,7 @@ const ErrorPage = () => {
     <div id='error-page'>
       <H1>Oops!</H1>
       <Paragraph>Sorry, an unexpected error has occurred.</Paragraph>
-      <Paragraph>
+      <Paragraph style={{ marginTop: 30 }}>
         <i>{error.statusText || error.message}</i>
       </Paragraph>
     </div>

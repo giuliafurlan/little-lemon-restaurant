@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import Booking from './layout/Booking';
-import Home from './layout/Home';
+import HomePage from './layout/Home';
 import ErrorPage from './pages/ErrorPage';
 import InProgressPage from './pages/InProgressPage';
 import reportWebVitals from './reportWebVitals';
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '', element: <Home /> },
+      { path: '', element: <HomePage /> },
       { path: 'booking', element: <Booking /> },
       { path: 'in-progress', element: <InProgressPage /> },
     ],
