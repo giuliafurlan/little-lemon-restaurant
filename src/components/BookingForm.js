@@ -1,7 +1,10 @@
+import moment from 'moment';
 import { useState } from 'react';
+import Button from '../ui/buttons';
+import theme from '../ui/theme';
 
 const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(moment().format('YYYY-MM-DD'));
   const [time, setTime] = useState();
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState();
@@ -18,7 +21,7 @@ const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
 
   return (
     <form
-      style={{ display: 'grid', maxWidth: 200, gap: 20 }}
+      style={{ display: 'grid', maxWidth: 400, gap: 20, marginBottom: 80 }}
       onSubmit={handleSubmit}
     >
       <label htmlFor='res-date'>Choose date</label>
@@ -29,17 +32,33 @@ const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
         value={date}
         onChange={handleChangeData}
       />
-      <label htmlFor='res-time'>Choose time</label>
-      <select
-        id='res-time'
-        tabIndex='1'
-        value={time}
-        onChange={(e) => setTime(e.target.value)}
-      >
-        {availableTimes.map((t) => (
-          <option key={t}>{t}</option>
-        ))}
-      </select>
+      <fieldset style={{ border: 'none', padding: 0 }}>
+        <legend style={{ marginBottom: 20 }}>Choose time</legend>
+        <div
+          style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}
+          onChange={(e) => setTime(e.target.value)}
+        >
+          {availableTimes.map((t) => (
+            <div
+              key={t}
+              style={{
+                padding: '4px 16px',
+                background:
+                  time === t
+                    ? theme.colors.primary.yellow
+                    : theme.colors.neutral.lightGrey,
+                borderRadius: 16,
+              }}
+            >
+              <input type='radio' id={t} name='time' value={t} hidden />
+              <label htmlFor={t} style={{ cursor: 'pointer' }}>
+                {t}
+              </label>
+            </div>
+          ))}
+        </div>
+      </fieldset>
+
       <label htmlFor='guests'>Number of guests</label>
       <input
         type='number'
@@ -61,7 +80,7 @@ const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
         <option>Birthday</option>
         <option>Anniversary</option>
       </select>
-      <input type='submit' tabIndex='4' value='Make Your reservation' />
+      <Button type='submit' tabIndex='4' label='Make Your reservation' />
     </form>
   );
 };

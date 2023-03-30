@@ -13,6 +13,9 @@ const theme = {
       light: '#EDEFEE',
       dark: '#333333',
     },
+    neutral: {
+      lightGrey: '#D9D9D9',
+    },
   },
   fontFamily: {
     markazi: `'Markazi Text', serif`,

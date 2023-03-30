@@ -1,27 +1,38 @@
 import { useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { fetchAPI, submitAPI } from '../api/api';
 import BookingForm from '../components/BookingForm';
 import { H1 } from '../ui/typography';
 
 const reducer = (state, action) => {
+  if (action.type === 'DATE_CHANGED') {
+    return fetchAPI(action.value);
+  }
   return state;
 };
 
 const Booking = () => {
-  const initializeTimes = () => [
-    '17:00',
-    '18:00',
-    '19:00',
-    '20:00',
-    '21:00',
-    '22:00',
-  ];
-  const [availableTimes, dispatch] = useReducer(reducer, [], initializeTimes);
-
-  const updateTimes = (newData) => {
-    dispatch(newData);
+  const navigate = useNavigate();
+  const initializeTimes = (date) => {
+    return fetchAPI(date);
   };
 
-  const handleSubmit = () => {};
+  const [availableTimes, dispatch] = useReducer(
+    reducer,
+    new Date(),
+    initializeTimes
+  );
+
+  const updateTimes = (newData) => {
+    dispatch({ type: 'DATE_CHANGED', value: new Date(newData) });
+  };
+
+  const handleSubmit = (formData) => {
+    const response = submitAPI(formData);
+    if (response) {
+      navigate('/booking-confirmed');
+    }
+  };
 
   return (
     <section

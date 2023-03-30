@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import './index.css';
 import Booking from './layout/Booking';
+import ConfirmedBooking from './layout/ConfirmedBooking';
 import HomePage from './layout/Home';
 import ErrorPage from './pages/ErrorPage';
 import InProgressPage from './pages/InProgressPage';
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     children: [
       { path: '', element: <HomePage /> },
       { path: 'booking', element: <Booking /> },
+      { path: 'booking-confirmed', element: <ConfirmedBooking /> },
       { path: 'in-progress', element: <InProgressPage /> },
     ],
   },

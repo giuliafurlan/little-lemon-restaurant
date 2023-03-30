@@ -1,9 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import BookingForm from './components/BookingForm';
 import Booking from './layout/Booking';
 
 test('Renders the Booking heading', () => {
-  render(<Booking />);
+  render(<Booking />, { wrapper: BrowserRouter });
   const headingElement = screen.getByText('Reserve a table');
   expect(headingElement).toBeInTheDocument();
 });
@@ -22,8 +23,8 @@ test('Submit the BookingForm', async () => {
   const dataInput = screen.getByLabelText(/Choose date/);
   fireEvent.change(dataInput, { target: { value: '2023-03-24' } });
 
-  const timeInput = screen.getByLabelText(/Choose time/);
-  fireEvent.change(timeInput, { target: { value: '18:00' } });
+  const timeInput = screen.getByLabelText(/18:00/);
+  fireEvent.click(timeInput);
 
   const guestsInput = screen.getByLabelText(/Number of guests/);
   fireEvent.change(guestsInput, { target: { value: 3 } });

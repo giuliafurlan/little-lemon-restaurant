@@ -8,6 +8,7 @@ const ButtonStyle = styled.button`
   border-radius: 16px;
   border: none;
   max-height: 53px;
+  cursor: pointer;
 `;
 
 const Button = ({ label, onClick, style, props }) => {
