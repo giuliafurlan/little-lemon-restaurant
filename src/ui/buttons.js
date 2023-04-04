@@ -11,9 +11,9 @@ const ButtonStyle = styled.button`
   cursor: pointer;
 `;
 
-const Button = ({ label, onClick, style, props }) => {
+const Button = ({ label, onClick, style, type, props }) => {
   return (
-    <ButtonStyle onClick={onClick} style={style} {...props}>
+    <ButtonStyle type={type} onClick={onClick} style={style} {...props}>
       <LeadText>{label}</LeadText>
     </ButtonStyle>
   );

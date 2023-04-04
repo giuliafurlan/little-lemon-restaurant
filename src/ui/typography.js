@@ -36,7 +36,7 @@ const CardTitle = styled.h3`
 const Paragraph = styled.p`
   font-family: ${theme.fontFamily.karla};
   font-size: 16px;
-  font-size: 400;
+  font-weight: 400;
   line-height: 1.5;
   margin: 0;
   max-width: 65ch;
@@ -46,7 +46,7 @@ const Paragraph = styled.p`
 const HighlightText = styled.p`
   font-family: ${theme.fontFamily.karla};
   font-size: 16px;
-  font-size: 500;
+  font-weight: 500;
   margin: 0;
   color: ${(props) => props.color || theme.colors.highlight.dark};
 `;
