@@ -28,6 +28,10 @@ const validationSchema = object().shape({
 const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
   const [showCalendar, setShowCalendar] = useState(true);
 
+  const handleSubmit = async (values) => {
+    onSubmit(values);
+  };
+
   return (
     <Formik
       initialValues={{
@@ -37,9 +41,9 @@ const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
         occasion: undefined,
       }}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
-      {({ values, errors, setFieldValue }) => {
+      {({ values, setFieldValue }) => {
         return (
           <Form style={{ display: 'grid', gap: 20, marginBottom: 80 }}>
             <Field name='date'>
@@ -143,6 +147,7 @@ const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
                     <div style={{ display: 'flex', gap: 10 }}>
                       <GuestsButton
                         type='button'
+                        aria-label='remove guests'
                         onClick={() =>
                           setFieldValue(field.name, field.value - 1)
                         }
@@ -152,6 +157,8 @@ const BookingForm = ({ availableTimes, onChangeData, onSubmit }) => {
                       <Paragraph>{values.guests}</Paragraph>
                       <GuestsButton
                         type='button'
+                        data-testid='guests_plus_button'
+                        aria-label='add guests'
                         onClick={() =>
                           setFieldValue(field.name, field.value + 1)
                         }
